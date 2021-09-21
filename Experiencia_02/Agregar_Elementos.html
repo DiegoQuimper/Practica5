@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Practica</title> 
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                font-size: 16px;
+                font-family: 'Open Sans', sans-serif;
+            }
+            .content { 
+                width: 960px; 
+                margin: 0 auto; 
+                margin-top: 50px;
+            } 
+            .col-1, .col-2 { 
+                display: inline-block;
+                
+            } 
+            .col-1 { 
+                width: 28%; 
+                margin-top: 65px;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                border-radius: 12px;
+                background-color: #2e66e0e1;
+                text-align: center;
+                font-size: 18px;
+                font-family: 'Open Sans', sans-serif;
+                margin-right: 100px;
+                float: right;
+                
+            } 
+            .col-2 { 
+                width: 70%; 
+                float: left;
+
+            } 
+            ul{
+                margin-left: 120px;
+                margin-top: 40px;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                border-radius: 12px;
+                background-color: #e39ef0c9;
+                width: 30%;
+                text-decoration-color: aliceblue;
+            }
+            label, input { 
+                display: block; 
+                margin-bottom: 8px; 
+                font-size: 18px;
+            } 
+            label { 
+                font-size: 18px;
+                color: #f0f0f0; 
+                margin-bottom: 0; 
+            } 
+            input[type="text"] { 
+                width: 75%; 
+                padding: 5px; 
+            } 
+            h2 { 
+                margin-top: 0; 
+                background-color:#f0f0f0;
+                margin:10px 50px;
+               
+            }
+            html{
+                background-image: url("https://i.pinimg.com/originals/b4/6c/d0/b46cd069a1837a0a881fe9b45bae456f.gif");
+                background-size: 100% 400%;
+            }
+            #agregarB{
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                border-radius: 12px;
+                background-color: #fdc62e;
+                margin-left: 100px;
+            }
+            #blanco{
+                text-align: center;
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="col-1">
+                <label for="inputData">Elemento: </label>
+                <input type="text" id="blanco" name="inputData"/>
+                <input type="button" id="agregarB" name="inputButton" value="Agregar"/>
+        </div>
+            <div class="col-2"></div>
+            <h2>Lista de Elementos</h2>
+            <ul id="list-element">
+            <!-- Los elementos se agregan aquí-->
+        </ul>
+    </div>
+</div>
+        <script type="text/javascript">
+        var inputData = document.querySelector('input[name=inputData]'),
+        buttonAdd = document.querySelector('input[name=inputButton]');
+        buttonAdd.addEventListener('click', cargarElemento, false);
+        function cargarElemento(){
+            var elementData = inputData.value,
+            ulElements = document.getElementById('list-element'),
+            li = document.createElement('li');
+            li.innerHTML = elementData; //Agrego el contenido de text-box
+            ulElements.appendChild(li); //Agrego "li" al div#list-element
+            inputData.value = ''; //reseteo text-box
+        }
+        </script>
+    </body>
+</html>
