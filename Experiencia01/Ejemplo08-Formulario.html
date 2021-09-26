@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-Type">
+        <title>Formulario</title>
+        <meta content="Maria" name="author">
+        <meta content="BlueGriffon wysiwyg editor" name="generator">
+        <script languague="JavaScript">
+            function enfocado(id_objeto) {
+                document.getElementById(id_objeto).style.border="2px solid red";
+            }
+            function desfoncado(id_objeto) {
+                document.getElementById(id_objeto).style.border="inherit"
+            }
+        </script>
+    </head>
+    <body>
+        <form action="mailto:maria.luque@ucsm.edu.pe" method="POST" enctype="text/plain">
+            <h1>Bienvenido</h1>
+            <fieldset>
+                <legend>Datos Personales</legend>
+                Introduce tu nombre: <input name="nombre" id="nombre" type="text" onfocus="javascript:enfocado(this.id)"
+                onblur="javascript:desfoncado(this.id);"> <br>
+                Mensaje: <textarea name="mensaje" cols="60" rows="6"></textarea><br/>
+            </fieldset>
+            <br/>
+            <hr/>
+            <input type="button" value="Haz clic sobre mi " onclick="javascript:window.location='http://www.google.com' "/>
+            <hr>
+            Selecciona color de tu icono:<br/>
+            <input type="radio" name="coloricono" value="rojo" /> Rojo <br/> 
+            <input type="radio" name="coloricono" value="verde" /> Verde <br/> 
+            <input type="radio" name="coloricono" value="azul" /> Azul <br/>   
+            <hr>
+            Escoja una materia:
+            <select>
+                <optgroup label="obligatorias">
+                    <option value="mat">Matem&aacute;ticas</option>
+                    <option value="len">Lenguaje</option>
+                </optgroup>
+                <optgroup label="optativas">
+                    <option value="cor">Corte y confecci&oacute;n</option>
+                    <option value="ast">Astronom&iacute;a</option>
+                </optgroup>
+            </select>                                
+            <hr/>
+            Selecciona los d&iacute;as con disponibilidad: <br>
+            <input type="checkbox" name="dias" value="l"/> Lunes <br/>
+            <input type="checkbox" name="dias" value="m"/> Martes <br/>
+            <input type="checkbox" name="dias" value="mm"/> Mi&eacute;rcoles <br/>
+            <input type="checkbox" name="dias" value="j"/> Jueves <br/>
+            <input type="checkbox" name="dias" value="v"/> Viernes <br/>
+            <hr/>
+            Adjunta tu curriculum vitae <input type="file" name="curriculum"/>
+            <hr/>
+            <input type="submit" value="Haz click para enviar la informaci&oacyte;n"/>
+            <input type="reset" value="Comenzar a rellenar el formulario de nuevo"
+    </body>
+</html>
